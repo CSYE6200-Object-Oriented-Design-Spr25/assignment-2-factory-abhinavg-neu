@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 public class Store extends AbstractStore {
    
     EletronicItemFactory eletronicItemFactory = EletronicItemFactory.getInstance();
@@ -37,5 +39,48 @@ public class Store extends AbstractStore {
         for (Item item : items) {
             System.out.println(item.toString());
         }
+        System.out.println("Sorting items by price");
+        sortByPrice();
+        System.out.println("Printing items after sorting by price");
+        for (Item item : items) {
+            System.out.println(item.toString());
+        }
+        System.out.println("Sorting items by name");
+        sortByName();
+        System.out.println("Printing items after sorting by name");
+        for (Item item : items) {
+            System.out.println(item.toString());
+        }
+        System.out.println("Sorting items by ID");
+        sortByID();
+        System.out.println("Printing items after sorting by ID");
+        for (Item item : items) {
+            System.out.println(item.toString());
+        }
+        
+    }
+
+    public void sortByPrice() {
+    Collections.sort(items, new Comparator<Item>() {
+        public int compare(Item item1, Item item2) {
+            return Double.compare(item1.price, item2.price);
+        }
+    });
+    }
+
+    public void sortByName() {
+        Collections.sort(items, new Comparator<Item>() {
+            public int compare(Item item1, Item item2) {
+                return item1.name.compareTo(item2.name);
+            }
+        });
+    }
+
+    public void sortByID() {
+        Collections.sort(items, new Comparator<Item>() {
+            public int compare(Item item1, Item item2) {
+                return item1.ID.compareTo(item2.ID);
+            }
+        });
     }
 }
