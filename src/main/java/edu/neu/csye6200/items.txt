@@ -1,0 +1,12 @@
+Food,Apple,F001,0.99
+Food,Bread,F002,2.49
+Food,Milk,F003,3.99
+Food,Pizza,F004,12.99
+Electronic,Laptop,E001,899.99
+Electronic,Smartphone,E002,699.99
+Electronic,Headphones,E003,79.99
+Electronic,Tablet,E004,299.99
+Service,Car Wash,S001,25.00
+Service,House Cleaning,S002,150.00
+Service,Phone Repair,S003,89.99
+Service,Computer Setup,S004,65.00 

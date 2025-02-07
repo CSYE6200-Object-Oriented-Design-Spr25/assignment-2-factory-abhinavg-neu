@@ -1,17 +1,17 @@
 package edu.neu.csye6200;
 
 public class Item {
-    private String name;
-    private String ID;
-    private double price;
+    protected String name;
+    protected String ID;
+    protected double price;
 
 
-    public class FoodItem extends Item {
+    public static class FoodItem extends Item {
         public FoodItem (String csvLine) {
             String[] data = csvLine.split(",");
-            name = data[0];
-            ID = data[1];
-            price = Double.parseDouble(data[2]);
+            name = data[1];
+            ID = data[2];
+            price = Double.parseDouble(data[3]);
         }
         @Override
         public String toString() {
@@ -20,12 +20,12 @@ public class Item {
     }
 
 
-    public class ElectronicItem extends Item {
+    public static class ElectronicItem extends Item {
         public ElectronicItem (String csvLine) {
             String[] data = csvLine.split(",");
-            name = data[0];
-            ID = data[1];
-            price = Double.parseDouble(data[2]);
+            name = data[1];
+            ID = data[2];
+            price = Double.parseDouble(data[3]);
         }
         @Override
         public String toString() {
@@ -33,12 +33,12 @@ public class Item {
         }
     }
 
-    public class ServiceItem extends Item {
+    public static class ServiceItem extends Item {
         public ServiceItem (String csvLine) {
             String[] data = csvLine.split(",");
-            name = data[0];
-            ID = data[1];
-            price = Double.parseDouble(data[2]);
+            name = data[1];
+            ID = data[2];
+            price = Double.parseDouble(data[3]);
         }
         @Override
         public String toString() {

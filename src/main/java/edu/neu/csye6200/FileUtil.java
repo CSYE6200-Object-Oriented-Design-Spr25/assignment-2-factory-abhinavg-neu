@@ -11,8 +11,11 @@ public class FileUtil {
 
     private String fileName;
 
-   Scanner scanner = new Scanner(System.in  );
+   Scanner scanner; 
 
+   public FileUtil() {
+    scanner = new Scanner(System.in);
+   }
    public BufferedReader readFile(String fileName) {
     try {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
