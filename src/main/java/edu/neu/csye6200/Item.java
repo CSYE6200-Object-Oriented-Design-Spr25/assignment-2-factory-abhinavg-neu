@@ -1,30 +1,48 @@
+package edu.neu.csye6200;
+
 public class Item {
     private String name;
-    private String description;
+    private String ID;
     private double price;
-    private int quantity;
 
-    public static class FoodItem extends Item {
-        private String expirationDate;
-    
+
+    public class FoodItem extends Item {
+        public FoodItem (String csvLine) {
+            String[] data = csvLine.split(",");
+            name = data[0];
+            ID = data[1];
+            price = Double.parseDouble(data[2]);
+        }
+        @Override
         public String toString() {
-            return "FoodItem: " + name + " " + description + " " + price + " " + quantity + " " + expirationDate;
+            return "FoodItem: " + name + " " + ID + " " + price;
         }
     }
 
-    public static class ElectronicItem extends Item {
-        private String powerConsumption;
 
+    public class ElectronicItem extends Item {
+        public ElectronicItem (String csvLine) {
+            String[] data = csvLine.split(",");
+            name = data[0];
+            ID = data[1];
+            price = Double.parseDouble(data[2]);
+        }
+        @Override
         public String toString() {
-            return "ElectronicItem: " + name + " " + description + " " + price + " " + quantity + " " + powerConsumption;
+            return "ElectronicItem: " + name + " " + ID + " " + price;
         }
     }
 
-    public static class ServiceItem extends Item {
-        private String serviceType;
-
+    public class ServiceItem extends Item {
+        public ServiceItem (String csvLine) {
+            String[] data = csvLine.split(",");
+            name = data[0];
+            ID = data[1];
+            price = Double.parseDouble(data[2]);
+        }
+        @Override
         public String toString() {
-            return "ServiceItem: " + name + " " + description + " " + price + " " + quantity + " " + serviceType;
+            return "ServiceItem: " + name + " " + ID + " " + price;
         }
     }
 }
